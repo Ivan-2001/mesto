@@ -21,3 +21,5 @@
 @import url(../blocks/elements/__element-footer/elements__element-footer.css);
 @import url(../blocks/elements/__heading/elements__heading.css);
 @import url(../blocks/elements/__like/elements__like.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
