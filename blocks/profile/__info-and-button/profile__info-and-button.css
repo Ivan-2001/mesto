@@ -1,0 +1,12 @@
+.profile__info-and-button {
+  display: flex;
+  gap: 19px;
+  margin-right: 19px;
+}
+
+@media screen and (max-width: 320px) {
+  .profile__info-and-button {
+    margin: 5px 0 0 10%;
+    gap: 10px;
+  }
+}
