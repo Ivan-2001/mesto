@@ -33,7 +33,6 @@
                 alt="Кнопка редактирования профиля."
             /></a>
           </div>
-
           <a class="profile__add-button-wrapper hover"
             ><img
               class="profile__add-button"
@@ -113,6 +112,29 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
       </footer>
+      <div class="popup">
+        <div class="popup__container">
+          <form class="popup__editor" action="">
+            <img
+              src="./images/close-icon.png"
+              alt="Закрыть окно."
+              class="popup__closed"
+            />
+            <h3 class="popup__heading">Редактировать профиль</h3>
+            <input
+              class="popup__name field"
+              type="text"
+              placeholder="Как можно вас называть"
+            />
+            <input
+              class="popup__about-myself field"
+              type="text"
+              placeholder="Расскажите о себе"
+            />
+            <a href="" class="popup__save">Сохранить</a>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
