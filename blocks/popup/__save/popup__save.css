@@ -9,6 +9,7 @@
   margin-top: 48px;
   transition: 0.3s;
   border-radius: 2px;
+  border: none;
 }
 
 .popup__save:hover {
