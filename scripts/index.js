@@ -21,6 +21,7 @@ function open() {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 }
+
 function close() {
   popup.classList.remove("popup_opened");
 }
