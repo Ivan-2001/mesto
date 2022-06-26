@@ -1,7 +1,6 @@
 const popup = document.querySelector(".popup");
 const closePopup = document.querySelector(".popup__closed");
 const openPopup = document.querySelector(".profile__edit-button");
-const savePopup = document.querySelector(".popup__save");
 const formElement = document.querySelector(".popup__editor");
 const nameInput = document.querySelector(".popup__name");
 const jobInput = document.querySelector(".popup__about-myself");
