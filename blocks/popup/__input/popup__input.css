@@ -13,11 +13,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .popup__input {
-    font-size: 14px;
-    line-height: 17px;
-  }
-
   .popup__input:first-of-type {
     margin-top: 75px;
   }
