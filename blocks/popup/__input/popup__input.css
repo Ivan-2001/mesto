@@ -1,4 +1,5 @@
-.field {
+.popup__input {
+  margin-top: 30px;
   padding: 0 0 9px 0;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -7,9 +8,17 @@
   color: #000;
 }
 
+.popup__input:first-of-type {
+  margin-top: 49px;
+}
+
 @media screen and (max-width: 768px) {
-  .field {
+  .popup__input {
     font-size: 14px;
     line-height: 17px;
+  }
+
+  .popup__input:first-of-type {
+    margin-top: 75px;
   }
 }

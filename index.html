@@ -110,22 +110,20 @@
       </footer>
       <div class="popup">
         <div class="popup__container">
-          <form class="popup__editor" action="#">
-            <img
-              src="./images/close-icon.png"
-              alt="Закрыть окно."
-              class="popup__closed"
-            />
+          <form class="popup__editor" action="#" name="edit-form">
+            <button type="button" class="popup__closed"></button>
             <h3 class="popup__heading">Редактировать профиль</h3>
             <input
-              class="popup__name field"
+              id="popup__name"
+              class="popup__input"
               type="text"
               placeholder="Как можно вас называть"
               name="name"
               required
             />
             <input
-              class="popup__about-myself field"
+              id="popup__about-myself"
+              class="popup__input"
               type="text"
               placeholder="Расскажите о себе"
               name="about-myself"
