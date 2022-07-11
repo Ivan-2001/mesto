@@ -36,74 +36,7 @@
             />
           </button>
         </section>
-        <section class="elements">
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-              alt="Заросшее здание."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Карачаевск</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1404681-unsplash.png"
-              alt="Силуэт гор на большом расстоянии."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1556355-unsplash.png"
-              alt="Острая гора с заснеженной вершиной."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1404681-unsplash.png"
-              alt="Силуэт гор на большом расстоянии."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Гора Эльбрус</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1556355-unsplash.png"
-              alt="Острая гора с заснеженной вершиной."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Домбай</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-          <article class="elements__element">
-            <img
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-              alt="Заросшее здание."
-              class="elements__image"
-            />
-            <div class="elements__element-footer">
-              <h2 class="elements__heading">Карачаево-Черкессия</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-          </article>
-        </section>
+        <section class="elements"></section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
@@ -134,6 +67,17 @@
         </div>
       </div>
     </div>
+
+    <template id="elements__element">
+      <article class="elements__element">
+        <img src="" class="elements__image" />
+        <div class="elements__element-footer">
+          <h2 class="elements__heading">Гора Эльбрус</h2>
+          <button type="button" class="elements__like"></button>
+        </div>
+      </article>
+    </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>

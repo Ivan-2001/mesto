@@ -6,6 +6,44 @@ const nameInput = document.getElementById("popup__name");
 const jobInput = document.getElementById("popup__about-myself");
 const nameProfile = document.querySelector(".profile__name");
 const jobProfile = document.querySelector(".profile__about-myself");
+const cardTemplate = document.getElementById("elements__element").content;
+const elementsContainer = document.querySelector(".elements");
+
+const initialCards = [
+  {
+    name: "Архыз",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+  },
+  {
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+  },
+  {
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+  },
+  {
+    name: "Камчатка",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+  },
+  {
+    name: "Холмогорский район",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+  },
+  {
+    name: "Байкал",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
+];
+
+initialCards.forEach(function (item) {
+  const cardElement = cardTemplate
+    .querySelector(".elements__element")
+    .cloneNode(true);
+  cardElement.querySelector(".elements__image").src = item.link;
+  cardElement.querySelector(".elements__heading").textContent = item.name;
+  elementsContainer.append(cardElement);
+});
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
