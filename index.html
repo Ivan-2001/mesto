@@ -41,28 +41,75 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
       </footer>
-      <div class="popup">
-        <div class="popup__container">
-          <form class="popup__editor" action="#" name="edit-form">
-            <button type="button" class="popup__closed"></button>
-            <h3 class="popup__heading">Редактировать профиль</h3>
+
+      <div class="popup popup-info">
+        <div class="popup__container popup-info__container">
+          <form
+            class="popup__editor popup-info__editor"
+            action="#"
+            name="edit-form"
+          >
+            <button
+              type="button"
+              class="popup__closed popup-info__closed"
+            ></button>
+            <h3 class="popup__heading popup-info__heading">
+              Редактировать профиль
+            </h3>
             <input
-              id="popup__name"
-              class="popup__input"
+              id="popup-info__name"
+              class="popup__input popup-info__input"
               type="text"
               placeholder="Как можно вас называть"
               name="name"
               required
             />
             <input
-              id="popup__about-myself"
-              class="popup__input"
+              id="popup-info__about-myself"
+              class="popup__input popup-info__input"
               type="text"
               placeholder="Расскажите о себе"
               name="about-myself"
               required
             />
-            <button type="submit" class="popup__save">Сохранить</button>
+            <button type="submit" class="popup__save popup-info__save">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup popup-image">
+        <div class="popup__container popup-image__container">
+          <form
+            class="popup__editor popup-image__editor"
+            action="#"
+            name="edit-form"
+          >
+            <button
+              type="button"
+              class="popup__closed popup-image__closed"
+            ></button>
+            <h3 class="popup__heading popup-image__heading">Новое место</h3>
+            <input
+              id="popup-image__name"
+              class="popup__input popup-image__input"
+              type="text"
+              placeholder="Название"
+              name="name"
+              required
+            />
+            <input
+              id="popup-image__link"
+              class="popup__input popup-image__input"
+              type="text"
+              placeholder="Ссылка на картинку"
+              name="about-myself"
+              required
+            />
+            <button type="submit" class="popup__save popup-image__save">
+              Создать
+            </button>
           </form>
         </div>
       </div>
