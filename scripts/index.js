@@ -101,6 +101,11 @@ function initialCard(heading, name) {
       const eventTarget = event.target;
       eventTarget.classList.toggle("elements__like_active");
     });
+  cardElement
+    .querySelector(".elements__delete")
+    .addEventListener("click", function (event) {
+      event.target.parentElement.remove();
+    });
   elementsContainer.prepend(cardElement);
 }
 
