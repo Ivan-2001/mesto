@@ -42,13 +42,9 @@ const initialCards = [
   },
 ];
 
+initialCards.reverse();
 initialCards.forEach(function (item) {
-  const cardElement = cardTemplate
-    .querySelector(".elements__element")
-    .cloneNode(true);
-  cardElement.querySelector(".elements__image").src = item.link;
-  cardElement.querySelector(".elements__heading").textContent = item.name;
-  elementsContainer.append(cardElement);
+  return initialCard(item.name, item.link);
 });
 
 function formSubmitHandlerInfo(evt) {
@@ -60,13 +56,9 @@ function formSubmitHandlerInfo(evt) {
 
 function formSubmitHandlerImage(evt) {
   evt.preventDefault();
-  const cardElement = cardTemplate
-    .querySelector(".elements__element")
-    .cloneNode(true);
-  cardElement.querySelector(".elements__image").src = LinkInput.value;
-  cardElement.querySelector(".elements__heading").textContent =
-    ImageNameInput.value;
-  elementsContainer.prepend(cardElement);
+
+  initialCard(ImageNameInput.value, LinkInput.value);
+
   popupImage.classList.remove("popup_opened");
 }
 
@@ -78,8 +70,7 @@ function openedPopupInfo() {
 
 function openedPopupImage() {
   popupImage.classList.add("popup_opened");
-  LinkInput.value = "";
-  ImageNameInput.value = "";
+  formElementImage.reset();
 }
 
 function closedPopupInfo() {
@@ -88,6 +79,29 @@ function closedPopupInfo() {
 
 function closedPopupImage() {
   popupImage.classList.remove("popup_opened");
+}
+
+function liked() {
+  const likeButton = document.querySelector(".elements__like");
+  likeButton.addEventListener("click", function (event) {
+    event.target.classList.toggle("elements__like_active");
+  });
+}
+
+function initialCard(heading, name) {
+  const cardElement = cardTemplate
+    .querySelector(".elements__element")
+    .cloneNode(true);
+  cardElement.querySelector(".elements__image").src = name;
+  cardElement.querySelector(".elements__heading").textContent = heading;
+
+  cardElement
+    .querySelector(".elements__like")
+    .addEventListener("click", function (event) {
+      const eventTarget = event.target;
+      eventTarget.classList.toggle("elements__like_active");
+    });
+  elementsContainer.prepend(cardElement);
 }
 
 openPopupInfo.addEventListener("click", openedPopupInfo);
