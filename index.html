@@ -84,7 +84,7 @@
           <form
             class="popup__editor popup-image__editor"
             action="#"
-            name="edit-form"
+            name="image-form"
           >
             <button
               type="button"
@@ -96,7 +96,7 @@
               class="popup__input popup-image__input"
               type="text"
               placeholder="Название"
-              name="name"
+              name="card-name"
               required
             />
             <input
@@ -104,13 +104,24 @@
               class="popup__input popup-image__input"
               type="text"
               placeholder="Ссылка на картинку"
-              name="about-myself"
+              name="card-link"
               required
             />
             <button type="submit" class="popup__save popup-image__save">
               Создать
             </button>
           </form>
+        </div>
+      </div>
+
+      <div class="popup popup-card">
+        <div class="popup__container popup-card__container">
+          <button
+            type="button"
+            class="popup__closed popup-card__closed"
+          ></button>
+          <img class="popup-card__image" src="" alt="" />
+          <h3 class="popup__heading popup-card__heading"></h3>
         </div>
       </div>
     </div>
@@ -120,7 +131,7 @@
         <button type="button" class="elements__delete"></button>
         <img alt="" src="" class="elements__image" />
         <div class="elements__element-footer">
-          <h2 class="elements__heading">Гора Эльбрус</h2>
+          <h2 class="elements__heading"></h2>
           <button type="button" class="elements__like"></button>
         </div>
       </article>
