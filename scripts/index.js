@@ -101,6 +101,7 @@ function initialCard(heading, name) {
     .querySelector(".elements__element")
     .cloneNode(true);
   cardElement.querySelector(".elements__image").src = name;
+  cardElement.querySelector(".elements__image").alt = heading;
   cardElement.querySelector(".elements__heading").textContent = heading;
 
   //Слушатель лайка
