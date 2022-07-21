@@ -7,6 +7,7 @@ const openPopupInfo = document.querySelector(".profile__edit-button");
 const openPopupImage = document.querySelector(".profile__add-button-wrapper");
 const popupCard = document.querySelector(".popup-card");
 const popupCardImage = document.querySelector(".popup-card__image");
+const popupCardHeading = document.querySelector(".popup-card__heading");
 const formElementInfo = document.querySelector(".popup-info__editor");
 const formElementImage = document.querySelector(".popup-image__editor");
 const nameInput = document.getElementById("popup-info__name");
@@ -65,13 +66,13 @@ function handleCardFormSubmit(evt) {
 }
 
 function openProfilePopup() {
-  popupProfile.classList.add("popup_opened");
+  openPopup(popupProfile);
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 }
 
 function openCardPopup() {
-  popupImage.classList.add("popup_opened");
+  openPopup(popupImage);
   formElementImage.reset();
 }
 
@@ -82,6 +83,10 @@ closeButtons.forEach(function (button) {
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+}
+
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
 }
 
 function liked() {
@@ -116,9 +121,8 @@ function initialCard(heading, name) {
   cardElement
     .querySelector(".elements__image")
     .addEventListener("click", function (event) {
-      popupCard.classList.add("popup_opened");
+      openPopup(popupCard);
       popupCardImage.src = event.target.src;
-      const popupCardHeading = document.querySelector(".popup-card__heading");
       popupCardHeading.textContent =
         cardElement.querySelector(".elements__heading").textContent;
     });
