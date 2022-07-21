@@ -115,7 +115,7 @@ function initialCard(heading, name) {
   cardElement
     .querySelector(".elements__delete")
     .addEventListener("click", function (event) {
-      event.target.parentElement.remove();
+      event.target.closest(".elements__element").remove();
     });
   elementsContainer.prepend(cardElement);
   //Слушатель открытия картинки
