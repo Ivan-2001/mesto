@@ -17,6 +17,7 @@ const nameProfile = document.querySelector(".profile__name");
 const jobProfile = document.querySelector(".profile__about-myself");
 const cardTemplate = document.getElementById("elements__element").content;
 const elementsContainer = document.querySelector(".elements");
+const closeButtons = document.querySelectorAll(".popup__closed");
 
 const initialCards = [
   {
@@ -54,13 +55,13 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
-  popupProfile.classList.remove("popup_opened");
+  closePopup(popupProfile);
 }
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
   initialCard(ImageNameInput.value, LinkInput.value);
-  popupImage.classList.remove("popup_opened");
+  closePopup(popupImage);
 }
 
 function openProfilePopup() {
@@ -74,16 +75,13 @@ function openCardPopup() {
   formElementImage.reset();
 }
 
-function closePopupInfo() {
-  popupProfile.classList.remove("popup_opened");
-}
+closeButtons.forEach(function (button) {
+  const popup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(popup));
+});
 
-function closePopupImage() {
-  popupImage.classList.remove("popup_opened");
-}
-
-function closePopupCard() {
-  popupCard.classList.remove("popup_opened");
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
 }
 
 function liked() {
@@ -129,8 +127,5 @@ function initialCard(heading, name) {
 
 openPopupInfo.addEventListener("click", openProfilePopup);
 openPopupImage.addEventListener("click", openCardPopup);
-closedPopupInfo.addEventListener("click", closePopupInfo);
-closedPopupImage.addEventListener("click", closePopupImage);
-closedPopupCard.addEventListener("click", closePopupCard);
 formElementInfo.addEventListener("submit", handleProfileFormSubmit);
 formElementImage.addEventListener("submit", handleCardFormSubmit);
