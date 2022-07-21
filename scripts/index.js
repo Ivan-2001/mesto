@@ -49,7 +49,7 @@ const initialCards = [
 
 initialCards.reverse();
 initialCards.forEach(function (item) {
-  return initialCard(item.name, item.link);
+  return renderCard(item.name, item.link);
 });
 
 function handleProfileFormSubmit(evt) {
@@ -61,7 +61,7 @@ function handleProfileFormSubmit(evt) {
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
-  initialCard(ImageNameInput.value, LinkInput.value);
+  renderCard(ImageNameInput.value, LinkInput.value);
   closePopup(popupImage);
 }
 
@@ -96,7 +96,7 @@ function liked() {
   });
 }
 
-function initialCard(heading, name) {
+function createCard(heading, name) {
   const cardElement = cardTemplate
     .querySelector(".elements__element")
     .cloneNode(true);
@@ -117,7 +117,6 @@ function initialCard(heading, name) {
     .addEventListener("click", function (event) {
       event.target.closest(".elements__element").remove();
     });
-  elementsContainer.prepend(cardElement);
   //Слушатель открытия картинки
   cardElement
     .querySelector(".elements__image")
@@ -127,7 +126,11 @@ function initialCard(heading, name) {
       popupCardHeading.textContent =
         cardElement.querySelector(".elements__heading").textContent;
     });
-  elementsContainer.prepend(cardElement);
+  return cardElement;
+}
+
+function renderCard(heading, name) {
+  elementsContainer.prepend(createCard(heading, name));
 }
 
 openPopupInfo.addEventListener("click", openProfilePopup);
