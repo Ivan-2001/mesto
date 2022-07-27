@@ -79,6 +79,11 @@ function openCardPopup() {
 closeButtons.forEach(function (button) {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
+  popup.addEventListener("click", function (evt) {
+    if (evt.target === evt.currentTarget) {
+      closePopup(popup);
+    }
+  });
 });
 
 function closePopup(popup) {
