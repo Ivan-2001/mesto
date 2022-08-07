@@ -19,6 +19,7 @@ const jobProfile = document.querySelector(".profile__about-myself");
 const cardTemplate = document.getElementById("elements__element").content;
 const elementsContainer = document.querySelector(".elements");
 const closeButtons = document.querySelectorAll(".popup__closed");
+const popupOverlay = document.querySelectorAll(".popup");
 
 const initialCards = [
   {
@@ -79,10 +80,11 @@ function openCardPopup() {
 closeButtons.forEach(function (button) {
   const popup = button.closest(".popup");
   button.addEventListener("click", () => closePopup(popup));
-  popup.addEventListener("click", function (evt) {
-    if (evt.target === evt.currentTarget) {
-      closePopup(popup);
-    }
+});
+
+popupOverlay.forEach(function (overlay) {
+  overlay.addEventListener("click", evt => {
+    closePopup(evt.target);
   });
 });
 
