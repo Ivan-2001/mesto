@@ -82,6 +82,15 @@ closeButtons.forEach(function (button) {
   button.addEventListener("click", () => closePopup(popup));
 });
 
+// закрытие клавишей esc
+function closeEcsPopup(evt) {
+  if (evt.key === "Escape") {
+    popupOverlay.forEach(popup => {
+      closePopup(popup);
+    });
+  }
+}
+
 popupOverlay.forEach(function (overlay) {
   overlay.addEventListener("click", evt => {
     closePopup(evt.target);
@@ -144,3 +153,6 @@ openPopupInfo.addEventListener("click", openProfilePopup);
 openPopupImage.addEventListener("click", openCardPopup);
 formElementInfo.addEventListener("submit", handleProfileFormSubmit);
 formElementImage.addEventListener("submit", handleCardFormSubmit);
+document.addEventListener("keydown", function (evt) {
+  closeEcsPopup(evt);
+});
