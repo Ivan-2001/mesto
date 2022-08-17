@@ -75,7 +75,6 @@ function openProfilePopup() {
 function openCardPopup() {
   openPopup(popupImage);
   formElementImage.reset();
-  // formElementImage.updateValueAndValidity();
 }
 
 closeButtons.forEach(function (button) {
@@ -107,13 +106,6 @@ function openPopup(popup) {
   popup.classList.add("popup_opened");
 }
 
-function liked() {
-  const likeButton = document.querySelector(".elements__like");
-  likeButton.addEventListener("click", function (event) {
-    event.target.classList.toggle("elements__like_active");
-  });
-}
-
 function createCard(heading, name) {
   const cardElement = cardTemplate
     .querySelector(".elements__element")
@@ -123,12 +115,12 @@ function createCard(heading, name) {
   cardElement.querySelector(".elements__heading").textContent = heading;
 
   //Слушатель лайка
-  cardElement
-    .querySelector(".elements__like")
-    .addEventListener("click", function (event) {
-      const eventTarget = event.target;
-      eventTarget.classList.toggle("elements__like_active");
-    });
+  cardElement.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("elements__like")) {
+      evt.target.classList.toggle("elements__like_active");
+    }
+  });
+
   //Слушатель кнопки удалить
   cardElement
     .querySelector(".elements__delete")
