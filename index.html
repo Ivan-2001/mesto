@@ -48,6 +48,7 @@
             class="popup__editor popup-info__editor"
             action="#"
             name="edit-form"
+            novalidate
           >
             <button
               type="button"
@@ -56,22 +57,33 @@
             <h3 class="popup__heading popup-info__heading">
               Редактировать профиль
             </h3>
-            <input
-              id="popup-info__name"
-              class="popup__input popup-info__input"
-              type="text"
-              placeholder="Как можно вас называть"
-              name="name"
-              required
-            />
-            <input
-              id="popup-info__about-myself"
-              class="popup__input popup-info__input"
-              type="text"
-              placeholder="Расскажите о себе"
-              name="about-myself"
-              required
-            />
+            <label class="popup__field">
+              <input
+                id="popup-info__name"
+                class="popup__input popup-info__input"
+                type="text"
+                placeholder="Как можно вас называть"
+                name="name"
+                required
+                minlength="2"
+                maxlength="40"
+              />
+              <span class="popup__input-error popup-info__name-error"></span>
+            </label>
+            <label class="popup__field"
+              ><input
+                id="popup-info__about-myself"
+                class="popup__input popup-info__input"
+                type="text"
+                placeholder="Расскажите о себе"
+                name="about-myself"
+                required
+                minlength="2"
+                maxlength="200" />
+              <span
+                class="popup__input-error popup-info__about-myself-error"
+              ></span
+            ></label>
             <button type="submit" class="popup__save popup-info__save">
               Сохранить
             </button>
@@ -85,28 +97,36 @@
             class="popup__editor popup-image__editor"
             action="#"
             name="image-form"
+            novalidate
           >
             <button
               type="button"
               class="popup__closed popup-image__closed"
             ></button>
             <h3 class="popup__heading popup-image__heading">Новое место</h3>
-            <input
-              id="popup-image__name"
-              class="popup__input popup-image__input"
-              type="text"
-              placeholder="Название"
-              name="card-name"
-              required
-            />
-            <input
-              id="popup-image__link"
-              class="popup__input popup-image__input"
-              type="text"
-              placeholder="Ссылка на картинку"
-              name="card-link"
-              required
-            />
+            <label class="popup__field"
+              ><input
+                id="popup-image__name"
+                class="popup__input popup-image__input"
+                type="text"
+                placeholder="Название"
+                name="card-name"
+                required
+                minlength="2"
+                maxlength="30" />
+              <span class="popup__input-error popup-image__name-error"></span
+            ></label>
+            <label class="popup__field"
+              ><input
+                id="popup-image__link"
+                class="popup__input popup-image__input"
+                type="url"
+                placeholder="Ссылка на картинку"
+                name="card-link"
+                required />
+              <span class="popup__input-error popup-image__link-error"></span
+            ></label>
+
             <button type="submit" class="popup__save popup-image__save">
               Создать
             </button>
@@ -138,5 +158,6 @@
     </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

@@ -6,10 +6,11 @@
   background-color: #000;
   text-decoration: none;
   color: #fff;
-  margin-top: 48px;
+  margin-top: 29px;
   transition: 0.3s;
   border-radius: 2px;
   border: none;
+  box-sizing: border-box;
 }
 
 .popup__save:hover {
@@ -21,7 +22,7 @@
   .popup__save {
     font-size: 14px;
     line-height: 17px;
-    margin-top: 47px;
+    margin-top: 25px;
     padding: 14px 0 15px 0;
   }
 }

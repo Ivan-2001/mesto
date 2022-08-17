@@ -1,5 +1,5 @@
 .popup__input {
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 0 0 9px 0;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -8,12 +8,8 @@
   color: #000;
 }
 
-.popup__input:first-of-type {
-  margin-top: 49px;
-}
-
-@media screen and (max-width: 768px) {
-  .popup__input:first-of-type {
-    margin-top: 75px;
-  }
+.popup__input:focus {
+  outline: 2px solid rgba(0, 38, 255, 0.5);
+  border-radius: 1px;
+  outline-offset: 1px;
 }

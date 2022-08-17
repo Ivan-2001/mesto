@@ -8,6 +8,10 @@
   transition: 0.7s;
 }
 
+.profile__edit-button:focus-visible {
+  outline: none;
+}
+
 .profile__edit-button:hover {
   opacity: 0.6;
   cursor: pointer;

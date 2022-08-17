@@ -75,6 +75,7 @@ function openProfilePopup() {
 function openCardPopup() {
   openPopup(popupImage);
   formElementImage.reset();
+  // formElementImage.updateValueAndValidity();
 }
 
 closeButtons.forEach(function (button) {
@@ -91,6 +92,7 @@ function closeEcsPopup(evt) {
   }
 }
 
+//закрытие кликом на оверлей
 popupOverlay.forEach(function (overlay) {
   overlay.addEventListener("click", evt => {
     closePopup(evt.target);

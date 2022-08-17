@@ -13,6 +13,10 @@
   transition: 0.7s;
 }
 
+.profile__add-button-wrapper:focus-visible {
+  outline: none;
+}
+
 .profile__add-button-wrapper:hover {
   opacity: 0.6;
   cursor: pointer;
