@@ -129,14 +129,15 @@ function createCard(heading, name) {
   });
 
   //Слушатель открытия картинки
-  cardElement
-    .querySelector(".elements__image")
-    .addEventListener("click", function (event) {
+  cardElement.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("elements__image")) {
       openPopup(popupCard);
-      popupCardImage.src = event.target.src;
+      popupCardImage.src = evt.target.src;
       popupCardHeading.textContent =
         cardElement.querySelector(".elements__heading").textContent;
-    });
+    }
+  });
+
   return cardElement;
 }
 
