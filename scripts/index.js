@@ -122,11 +122,12 @@ function createCard(heading, name) {
   });
 
   //Слушатель кнопки удалить
-  cardElement
-    .querySelector(".elements__delete")
-    .addEventListener("click", function (event) {
-      event.target.closest(".elements__element").remove();
-    });
+  cardElement.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("elements__delete")) {
+      evt.target.closest(".elements__element").remove();
+    }
+  });
+
   //Слушатель открытия картинки
   cardElement
     .querySelector(".elements__image")
