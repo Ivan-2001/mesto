@@ -98,12 +98,31 @@ popupOverlay.forEach(function (overlay) {
   });
 });
 
+//функция скрытия ошибки
+function hideError(popup) {
+  //удалить стили полей с ошибкой
+  const inputs = popup.querySelectorAll(".popup__input_type_error");
+  inputs.forEach(function (evt) {
+    evt.classList.remove("popup__input_type_error");
+  });
+  //удалить сообщение при ошибке
+  const errorMessages = popup.querySelectorAll(".popup__input-error_active");
+  errorMessages.forEach(function (evt) {
+    evt.classList.remove("popup__input-error_active");
+    evt.textContent = "";
+  });
+  //сделать кнопку неактивной
+  const buttonSave = popup.querySelector(".popup__save");
+  buttonSave.classList.add("popup__save_inactive");
+}
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  hideError(popup);
 }
 
 function createCard(heading, name) {
