@@ -55,7 +55,14 @@ const enableValidation = () => {
 };
 
 // Вызовем функцию
-enableValidation();
+enableValidation({
+  formSelector: ".popup__editor",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__save",
+  inactiveButtonClass: "popup__save_inactive",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__input-error_active",
+});
 
 // Функция принимает массив полей,проверяя их на валидность
 function hasInvalidInput(inputList) {
