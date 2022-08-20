@@ -77,5 +77,6 @@ function toggleButtonState(inputList, buttonElement) {
     buttonElement.classList.add("popup__save_inactive");
   } else {
     buttonElement.classList.remove("popup__save_inactive");
+    buttonElement.removeAttribute("disabled");
   }
 }

@@ -70,11 +70,13 @@ function openProfilePopup() {
   openPopup(popupProfile);
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
+  hideError(popupProfile);
 }
 
 function openCardPopup() {
   openPopup(popupImage);
   formElementImage.reset();
+  hideError(popupImage);
 }
 
 closeButtons.forEach(function (button) {
@@ -114,6 +116,7 @@ function hideError(popup) {
   //сделать кнопку неактивной
   const buttonSave = popup.querySelector(".popup__save");
   buttonSave.classList.add("popup__save_inactive");
+  buttonSave.setAttribute("disabled", "disabled");
 }
 
 function closePopup(popup) {
@@ -122,7 +125,6 @@ function closePopup(popup) {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  hideError(popup);
 }
 
 function createCard(heading, name) {
