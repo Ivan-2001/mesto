@@ -112,7 +112,6 @@ function hideError(popup) {
 // закрытие клавишей esc
 function closeEcsPopup(evt) {
   evt.preventDefault();
-  const activePopup = document.querySelector(".popup_opened");
   if (evt.key === "Escape") {
     popupOverlay.forEach(popup => {
       closePopup(popup);
@@ -121,15 +120,15 @@ function closeEcsPopup(evt) {
 }
 
 function closePopup(popup) {
-  popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeEcsPopup);
+  popup.classList.remove("popup_opened");
 }
 
 function openPopup(popup) {
-  popup.classList.add("popup_opened");
   document.addEventListener("keydown", function (evt) {
     closeEcsPopup(evt);
   });
+  popup.classList.add("popup_opened");
 }
 
 function createCard(heading, name) {
