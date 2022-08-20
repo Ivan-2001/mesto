@@ -84,15 +84,6 @@ closeButtons.forEach(function (button) {
   button.addEventListener("click", () => closePopup(popup));
 });
 
-// закрытие клавишей esc
-function closeEcsPopup(evt) {
-  if (evt.key === "Escape") {
-    popupOverlay.forEach(popup => {
-      closePopup(popup);
-    });
-  }
-}
-
 //закрытие кликом на оверлей
 popupOverlay.forEach(function (overlay) {
   overlay.addEventListener("click", evt => {
@@ -118,12 +109,27 @@ function hideError(popup) {
   buttonSave.classList.add("popup__save_inactive");
 }
 
+// закрытие клавишей esc
+function closeEcsPopup(evt) {
+  evt.preventDefault();
+  const activePopup = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    popupOverlay.forEach(popup => {
+      closePopup(popup);
+    });
+  }
+}
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeEcsPopup);
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", function (evt) {
+    closeEcsPopup(evt);
+  });
 }
 
 function createCard(heading, name) {
@@ -169,6 +175,6 @@ openPopupInfo.addEventListener("click", openProfilePopup);
 openPopupImage.addEventListener("click", openCardPopup);
 formElementInfo.addEventListener("submit", handleProfileFormSubmit);
 formElementImage.addEventListener("submit", handleCardFormSubmit);
-document.addEventListener("keydown", function (evt) {
-  closeEcsPopup(evt);
-});
+// document.addEventListener("keydown", function (evt) {
+//   closeEcsPopup(evt);
+// });
