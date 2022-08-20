@@ -116,7 +116,6 @@ function hideError(popup) {
   //сделать кнопку неактивной
   const buttonSave = popup.querySelector(".popup__save");
   buttonSave.classList.add("popup__save_inactive");
-  buttonSave.setAttribute("disabled", "disabled");
 }
 
 function closePopup(popup) {

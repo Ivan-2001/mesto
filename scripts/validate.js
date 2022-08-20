@@ -36,7 +36,7 @@ function setEventListeners(formElement) {
   });
 }
 
-const enableValidation = () => {
+const enableValidation = formSelector => {
   // Найдём все формы с указанным классом в DOM,
   // сделаем из них массив методом Array.from
   const formList = Array.from(document.querySelectorAll(".popup__editor"));
@@ -75,6 +75,7 @@ function hasInvalidInput(inputList) {
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add("popup__save_inactive");
+    buttonElement.setAttribute("disabled", "disabled");
   } else {
     buttonElement.classList.remove("popup__save_inactive");
     buttonElement.removeAttribute("disabled");
