@@ -111,7 +111,6 @@ function hideError(popup) {
 
 // закрытие клавишей esc
 function closeEcsPopup(evt) {
-  evt.preventDefault();
   if (evt.key === "Escape") {
     popupOverlay.forEach(popup => {
       closePopup(popup);
