@@ -157,6 +157,8 @@ function createCard(heading, name) {
     if (evt.target.classList.contains("elements__image")) {
       openPopup(popupCard);
       popupCardImage.src = evt.target.src;
+      popupCardImage.alt =
+        cardElement.querySelector(".elements__heading").textContent;
       popupCardHeading.textContent =
         cardElement.querySelector(".elements__heading").textContent;
     }
