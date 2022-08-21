@@ -12,8 +12,8 @@ const formElementInfo = document.querySelector(".popup-info__editor");
 const formElementImage = document.querySelector(".popup-image__editor");
 const nameInput = document.getElementById("popup-info__name");
 const jobInput = document.getElementById("popup-info__about-myself");
-const ImageNameInput = document.getElementById("popup-image__name");
-const LinkInput = document.getElementById("popup-image__link");
+const imageNameInput = document.getElementById("popup-image__name");
+const linkInput = document.getElementById("popup-image__link");
 const nameProfile = document.querySelector(".profile__name");
 const jobProfile = document.querySelector(".profile__about-myself");
 const cardTemplate = document.getElementById("elements__element").content;
@@ -62,7 +62,7 @@ function handleProfileFormSubmit(evt) {
 
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
-  renderCard(ImageNameInput.value, LinkInput.value);
+  renderCard(imageNameInput.value, linkInput.value);
   closePopup(popupImage);
 }
 
