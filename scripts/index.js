@@ -113,22 +113,19 @@ function hideError(popup) {
 // закрытие клавишей esc
 function closeEcsPopup(evt) {
   if (evt.key === "Escape") {
-    popupOverlays.forEach(popup => {
-      closePopup(popup);
-    });
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
   }
 }
 
 function closePopup(popup) {
-  document.removeEventListener("keydown", closeEcsPopup);
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeEcsPopup);
 }
 
 function openPopup(popup) {
-  document.addEventListener("keydown", function (evt) {
-    closeEcsPopup(evt);
-  });
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closeEcsPopup);
 }
 
 function createCard(heading, name) {
