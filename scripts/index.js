@@ -132,34 +132,30 @@ function createCard(heading, name) {
   const cardElement = cardTemplate
     .querySelector(".elements__element")
     .cloneNode(true);
-  cardElement.querySelector(".elements__image").src = name;
-  cardElement.querySelector(".elements__image").alt = heading;
+  const image = cardElement.querySelector(".elements__image");
+  image.src = name;
+  image.alt = heading;
   cardElement.querySelector(".elements__heading").textContent = heading;
 
   //Слушатель лайка
-  cardElement.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("elements__like")) {
-      evt.target.classList.toggle("elements__like_active");
-    }
+  const like = cardElement.querySelector(".elements__like");
+  like.addEventListener("click", function (evt) {
+    evt.target.classList.toggle("elements__like_active");
   });
 
   //Слушатель кнопки удалить
-  cardElement.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("elements__delete")) {
-      evt.target.closest(".elements__element").remove();
-    }
+  const del = cardElement.querySelector(".elements__delete");
+  del.addEventListener("click", function (evt) {
+    evt.target.closest(".elements__element").remove();
   });
 
   //Слушатель открытия картинки
-  cardElement.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("elements__image")) {
-      openPopup(popupCard);
-      popupCardImage.src = evt.target.src;
-      popupCardImage.alt =
-        cardElement.querySelector(".elements__heading").textContent;
-      popupCardHeading.textContent =
-        cardElement.querySelector(".elements__heading").textContent;
-    }
+  const img = cardElement.querySelector(".elements__image");
+  img.addEventListener("click", function (evt) {
+    openPopup(popupCard);
+    popupCardImage.src = name;
+    popupCardImage.alt = heading;
+    popupCardHeading.textContent = heading;
   });
 
   return cardElement;
