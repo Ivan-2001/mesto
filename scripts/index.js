@@ -19,7 +19,7 @@ const jobProfile = document.querySelector(".profile__about-myself");
 const cardTemplate = document.getElementById("elements__element").content;
 const elementsContainer = document.querySelector(".elements");
 const closeButtons = document.querySelectorAll(".popup__closed");
-const popupOverlay = document.querySelectorAll(".popup");
+const popupOverlays = document.querySelectorAll(".popup");
 
 const initialCards = [
   {
@@ -85,7 +85,7 @@ closeButtons.forEach(function (button) {
 });
 
 //закрытие кликом на оверлей
-popupOverlay.forEach(function (overlay) {
+popupOverlays.forEach(function (overlay) {
   overlay.addEventListener("click", evt => {
     closePopup(evt.target);
   });
@@ -112,7 +112,7 @@ function hideError(popup) {
 // закрытие клавишей esc
 function closeEcsPopup(evt) {
   if (evt.key === "Escape") {
-    popupOverlay.forEach(popup => {
+    popupOverlays.forEach(popup => {
       closePopup(popup);
     });
   }
