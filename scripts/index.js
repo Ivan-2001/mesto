@@ -18,7 +18,6 @@ const nameProfile = document.querySelector(".profile__name");
 const jobProfile = document.querySelector(".profile__about-myself");
 const cardTemplate = document.getElementById("elements__element").content;
 const elementsContainer = document.querySelector(".elements");
-const closeButtons = document.querySelectorAll(".popup__closed");
 const popupOverlays = document.querySelectorAll(".popup");
 
 const initialCards = [
@@ -79,18 +78,6 @@ function openCardPopup() {
   hideError(popupImage);
 }
 
-closeButtons.forEach(function (button) {
-  const popup = button.closest(".popup");
-  button.addEventListener("click", () => closePopup(popup));
-});
-
-//закрытие кликом на оверлей
-popupOverlays.forEach(function (overlay) {
-  overlay.addEventListener("click", evt => {
-    closePopup(evt.target);
-  });
-});
-
 //функция скрытия ошибки
 function hideError(popup) {
   //удалить стили полей с ошибкой
@@ -117,6 +104,18 @@ function closeEcsPopup(evt) {
     closePopup(openedPopup);
   }
 }
+
+//закрытие нажатием на крестик или на оверлей
+popupOverlays.forEach(popup => {
+  popup.addEventListener("mousedown", evt => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__closed")) {
+      closePopup(popup);
+    }
+  });
+});
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
@@ -169,6 +168,3 @@ openPopupInfo.addEventListener("click", openProfilePopup);
 openPopupImage.addEventListener("click", openCardPopup);
 formElementInfo.addEventListener("submit", handleProfileFormSubmit);
 formElementImage.addEventListener("submit", handleCardFormSubmit);
-// document.addEventListener("keydown", function (evt) {
-//   closeEcsPopup(evt);
-// });
